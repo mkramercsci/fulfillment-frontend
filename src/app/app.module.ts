@@ -5,13 +5,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BatchesComponent } from './batches/batches.component';
-import { CompleteComponent } from './complete/complete.component';
+import { BatchesCompleteComponent } from './batches-complete/batches-complete.component';
+import { BatchesContainerComponent } from './batches-container/batches-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BatchesComponent,
-    CompleteComponent
+    BatchesCompleteComponent,
+    BatchesContainerComponent,
   ],
   imports: [
     BrowserModule,

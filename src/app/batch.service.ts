@@ -10,8 +10,12 @@ import { environment } from '../environments/environment';
 export class BatchService {
   private apiServerUrl = environment.apiBaseUrl;
 
-
   constructor(private http: HttpClient) { }
+
+
+  public addBatch(batch: Batch): Observable<Batch> {
+    return this.http.post<Batch>(`${this.apiServerUrl}/batches/add`, batch);
+  }
 
   public getBatches(): Observable<Batch[]> {
     return this.http.get<Batch[]>(`${this.apiServerUrl}/batches/all`);
@@ -19,10 +23,6 @@ export class BatchService {
 
   public getComplete(): Observable<Batch[]> {
     return this.http.get<Batch[]>(`${this.apiServerUrl}/batches/complete`);
-  }
-
-  public addBatch(batch: Batch): Observable<Batch> {
-    return this.http.post<Batch>(`${this.apiServerUrl}/batches/add`, batch);
   }
 
   public deleteAll(): Observable<Batch[]> {
