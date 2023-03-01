@@ -4,11 +4,11 @@ import { Batch } from '../batch';
 import { BatchService } from '../batch.service';
 
 @Component({
-  selector: 'app-batches-complete',
-  templateUrl: './batches-complete.component.html',
-  styleUrls: ['./batches-complete.component.css']
+  selector: 'app-complete',
+  templateUrl: './complete.component.html',
+  styleUrls: ['./complete.component.css']
 })
-export class BatchesCompleteComponent implements OnInit {
+export class CompleteComponent implements OnInit {
 
   @Input() batches: Batch[] = [];
 

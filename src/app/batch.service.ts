@@ -7,25 +7,30 @@ import { environment } from '../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
+
 export class BatchService {
-  private apiServerUrl = environment.apiBaseUrl;
+  private batchesUrl = environment.apiBaseUrl + "/batches";
 
   constructor(private http: HttpClient) { }
 
-
-  public addBatch(batch: Batch): Observable<Batch> {
-    return this.http.post<Batch>(`${this.apiServerUrl}/batches/add`, batch);
+  addBatch(batch: Batch): Observable<Batch> {
+    return this.http.post<Batch>(`${this.batchesUrl}/add`, batch);
   }
 
-  public getBatches(): Observable<Batch[]> {
-    return this.http.get<Batch[]>(`${this.apiServerUrl}/batches/all`);
+  getBatches(): Observable<Batch[]> {
+    return this.http.get<Batch[]>(`${this.batchesUrl}/all`);
   }
 
-  public getComplete(): Observable<Batch[]> {
-    return this.http.get<Batch[]>(`${this.apiServerUrl}/batches/complete`);
+  getComplete(): Observable<Batch[]> {
+    return this.http.get<Batch[]>(`${this.batchesUrl}/complete`);
   }
 
-  public deleteAll(): Observable<Batch[]> {
-    return this.http.delete<Batch[]>(`${this.apiServerUrl}/batches/delete_all`);
+  setComplete(id: number): any { //Observable<Batch> {
+    const url = `${this.batchesUrl}/set_complete/${id}`;
+
+  }
+
+  deleteAll(): Observable<Batch[]> {
+    return this.http.delete<Batch[]>(`${this.batchesUrl}/delete_all`);
   }
 }

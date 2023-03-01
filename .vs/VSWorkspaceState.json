@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\src",
-    "\\src\\app",
-    "\\src\\app\\batches"
+    ""
   ],
-  "SelectedNode": "\\src\\app\\batch.service.ts",
+  "SelectedNode": "\\src",
   "PreviewInSolutionExplorer": false
 }

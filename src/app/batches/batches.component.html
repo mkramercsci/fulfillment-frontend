@@ -2,7 +2,7 @@
 
 <div>
   <ul class="batches">
-    <li *ngFor="let batch of batches">
+    <li *ngFor="let batch of batches" (click)="setComplete()">
       {{batch.id}} {{batch.complete}}
     </li>
   </ul>

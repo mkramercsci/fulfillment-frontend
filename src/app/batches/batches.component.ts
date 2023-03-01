@@ -17,5 +17,10 @@ export class BatchesComponent implements OnInit {
   constructor(private batchService: BatchService) { }
 
   ngOnInit(): void {
+
+  }
+
+  setComplete(): void {
+    alert("clicked");
   }
 }

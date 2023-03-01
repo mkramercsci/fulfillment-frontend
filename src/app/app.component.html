@@ -1,7 +1,16 @@
 <h1>{{title}}</h1>
 
-<nav>
-  <a routerLink="/batches">Batches</a>
+<nav (click)="toggleDisplay()">
+  {{navTitle}}
 </nav>
 
-<app-batches-container></app-batches-container>
+<app-batches *ngIf="batchesVisible" [batches]="batches">
+</app-batches>
+
+<app-complete  *ngIf="completeVisible" [batches]="complete">
+</app-complete>
+
+<div>
+  <button type="button" class="add-button" (click)="add()">+</button>
+  <button type="button" class="delete-button" (click)="deleteAll()">Delete Workload</button>
+</div>
