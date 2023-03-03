@@ -1,14 +1,11 @@
 <h1>{{title}}</h1>
 
-<nav (click)="toggleDisplay()">
-  {{navTitle}}
+<nav>
+  <a routerLink="/batches">Batches</a>
+  <a routerLink="/complete">Complete</a>
 </nav>
 
-<app-batches *ngIf="batchesVisible" [batches]="batches">
-</app-batches>
-
-<app-complete  *ngIf="completeVisible" [batches]="complete">
-</app-complete>
+<router-outlet></router-outlet>
 
 <div>
   <button type="button" class="add-button" (click)="add()">+</button>

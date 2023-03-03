@@ -5,16 +5,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BatchesComponent } from './batches/batches.component';
 import { CompleteComponent } from './complete/complete.component';
+import { BatchDetailComponent } from './batch-detail/batch-detail.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     BatchesComponent,
     CompleteComponent,
+    BatchDetailComponent,
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

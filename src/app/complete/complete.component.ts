@@ -10,10 +10,23 @@ import { BatchService } from '../batch.service';
 })
 export class CompleteComponent implements OnInit {
 
-  @Input() batches: Batch[] = [];
+  @Input() complete: Batch[] = [];
 
   constructor(private batchService: BatchService) { }
 
   ngOnInit(): void {
+    this.getComplete();
+  }
+
+  // get all batches with complete = true
+  getComplete(): void {
+    this.batchService.getComplete().subscribe(
+      (response: Batch[]) => {
+        this.complete = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 }

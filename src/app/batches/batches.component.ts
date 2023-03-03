@@ -17,10 +17,22 @@ export class BatchesComponent implements OnInit {
   constructor(private batchService: BatchService) { }
 
   ngOnInit(): void {
-
+    this.getBatches();
   }
 
-  setComplete(): void {
-    alert("clicked");
+  onSelect(batch: Batch): void {
+    alert(batch.id);
+  }
+
+  // get all batches with complete = false
+  getBatches(): void {
+    this.batchService.getBatches().subscribe(
+      (response: Batch[]) => {
+        this.batches = response;
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message);
+      }
+    );
   }
 }

@@ -23,8 +23,7 @@ export class AppComponent implements OnInit {
   constructor(private batchService: BatchService) { }
 
   ngOnInit() {
-    this.getBatches();
-    this.getComplete();
+
   }
 
   // add one new random batch to the workload
@@ -33,30 +32,6 @@ export class AppComponent implements OnInit {
       .subscribe(batch => {
         this.batches.push(batch);
       });
-  }
-
-  // get all batches with complete = false
-  getBatches(): void {
-    this.batchService.getBatches().subscribe(
-      (response: Batch[]) => {
-        this.batches = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
-  }
-
-  // get all batches with complete = true
-  getComplete(): void {
-    this.batchService.getComplete().subscribe(
-      (response: Batch[]) => {
-        this.complete = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
   }
 
   // TESTING method
