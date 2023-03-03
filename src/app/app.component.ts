@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Batch } from './batch';
-import { BatchService } from './batch.service';
+import { Batch } from './model/batch';
+import { BatchService } from './service/batch.service';
 
 @Component({
   selector: 'app-root',
@@ -24,23 +24,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
 
-  }
-
-  // add one new random batch to the workload
-  add(): void {
-    this.batchService.addBatch({} as Batch)
-      .subscribe(batch => {
-        this.batches.push(batch);
-      });
-  }
-
-  // TESTING method
-  // delete the entire workload
-  // batch_details, orders, and batches DB tables are completely emptied
-  deleteAll(): void {
-    this.batchService.deleteAll().subscribe();
-    this.batches = [];
-    this.complete = [];
   }
 
   // switch between component views of batches and complete

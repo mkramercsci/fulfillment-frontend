@@ -1,13 +1,8 @@
 <h1>{{title}}</h1>
 
 <nav>
-  <a routerLink="/batches">Batches</a>
-  <a routerLink="/complete">Complete</a>
+  <a routerLink="/batches">In Progress</a>
+  <a routerLink="/complete"> Complete</a>
 </nav>
 
 <router-outlet></router-outlet>
-
-<div>
-  <button type="button" class="add-button" (click)="add()">+</button>
-  <button type="button" class="delete-button" (click)="deleteAll()">Delete Workload</button>
-</div>

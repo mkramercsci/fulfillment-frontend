@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { Batch } from '../batch';
-import { BatchService } from '../batch.service';
+import { Batch } from '../model/batch';
+import { BatchService } from '../service/batch.service';
 
 @Component({
   selector: 'app-complete',

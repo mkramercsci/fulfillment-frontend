@@ -1,10 +1,10 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Batch } from '../batch';
-import { BatchDetail } from '../batch-detail';
-import { BatchDetailService } from '../batch-detail.service';
-import { BatchService } from '../batch.service';
+import { Batch } from '../model/batch';
+import { BatchDetail } from '../model/batch-detail';
+import { BatchDetailService } from '../service/batch-detail.service';
+import { BatchService } from '../service/batch.service';
 
 @Component({
   selector: 'app-batch-detail',

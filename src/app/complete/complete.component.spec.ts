@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BatchesCompleteComponent } from './batches-complete.component';
+import { CompleteComponent } from './complete.component';
 
 describe('BatchesCompleteComponent', () => {
-  let component: BatchesCompleteComponent;
-  let fixture: ComponentFixture<BatchesCompleteComponent>;
+  let component: CompleteComponent;
+  let fixture: ComponentFixture<CompleteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BatchesCompleteComponent ]
+      declarations: [ CompleteComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BatchesCompleteComponent);
+    fixture = TestBed.createComponent(CompleteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
