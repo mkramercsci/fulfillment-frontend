@@ -15,20 +15,29 @@ export class BatchDetailComponent implements OnInit {
 
   @Input() batch?: Batch;
   batchDetails: BatchDetail[] = [];
+  id: number = 0;
 
   constructor(
     private route: ActivatedRoute,
     private batchService: BatchService,
-    private batchDetailService: BatchDetailService
+    private batchDetailService: BatchDetailService,
   ) { }
 
   ngOnInit(): void {
-    this.getBatchDetail();
+    this.getBatchId();
+    this.getBatchDetail(this.id);
   }
 
-  getBatchDetail(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+  getBatchDetail(id: number): void {
     this.batchDetailService.getBatchDetails(id)
       .subscribe(batchDetails => this.batchDetails = batchDetails);
+  }
+
+  getBatchId(): void {
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
+  }
+
+  exit(): void {
+
   }
 }

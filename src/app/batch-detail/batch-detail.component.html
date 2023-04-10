@@ -1,6 +1,28 @@
-<h2>Batch Details</h2>
+<h2>Batch #{{id}}</h2>
 
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Qty</th>
+      <th scope="col">Item Name</th>
+      <th scope="col">Dept</th>
+      <th scope="col">Item Id</th>
+      <th scope="col">Order Id</th>
+      <th scope="col">Customer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let details of batchDetails">
+      <td>{{details.quantity}}</td>
+      <td>{{details.item.itemName}}</td>
+      <td>{{details.item.department.deptName}}</td>
+      <td>{{details.item.department.id}}-{{details.item.id}}</td>
+      <td>{{details.order.id}}</td>
+      <td>{{details.order.name.personName}}</td>
+    </tr>
+  </tbody>
+</table>
 
-<li *ngFor="let details of batchDetails">
-  {{details.quantity}} {{details.picked}}
-</li>
+<div>
+  <button type="button" class="exit-button" (click)="exit()"><= Exit Batch</button>
+</div>

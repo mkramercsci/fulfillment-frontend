@@ -4,10 +4,8 @@
   <ul class="batches">
     <li *ngFor="let batch of batches">
       <a routerLink="/detail/{{batch.id}}">
-        <button type="button">
           <span class="badge">{{batch.id}}</span>
           <span class="complete"> {{batch.complete}}</span>
-        </button>
       </a>
     </li>
   </ul>

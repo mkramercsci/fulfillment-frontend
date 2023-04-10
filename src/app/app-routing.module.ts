@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: 'batches', component: BatchesComponent },
   { path: 'complete', component: CompleteComponent },
   { path: 'detail/:id', component: BatchDetailComponent },
+  { path: '', redirectTo: '/batches', pathMatch: 'full' }
 ];
 
 @NgModule({

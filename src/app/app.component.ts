@@ -13,8 +13,6 @@ export class AppComponent implements OnInit {
   batches: Batch[] = [];
   complete: Batch[] = [];
 
-  batchesVisible: boolean = true;
-  completeVisible: boolean = false;
 
   navTitle: string = "Show Complete Batches"
 
@@ -26,11 +24,4 @@ export class AppComponent implements OnInit {
 
   }
 
-  // switch between component views of batches and complete
-  toggleDisplay(): void {
-    this.batchesVisible = this.batchesVisible ? false : true;
-    this.completeVisible = this.completeVisible ? false : true;
-
-    this.navTitle = this.batchesVisible ? "Show Complete Batches" : "Show Batches In Progress";
-  }
 }

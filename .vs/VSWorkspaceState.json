@@ -5,8 +5,8 @@
     "\\src\\app",
     "\\src\\app\\batch-detail",
     "\\src\\app\\batches",
-    "\\src\\app\\complete"
+    "\\src\\app\\model"
   ],
-  "SelectedNode": "\\src\\app\\batch-detail.ts",
+  "SelectedNode": "\\src\\app\\batch-detail\\batch-detail.component.html",
   "PreviewInSolutionExplorer": false
 }

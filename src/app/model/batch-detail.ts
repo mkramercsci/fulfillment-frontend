@@ -1,8 +1,13 @@
+import { Batch } from "./batch";
+import { Department } from "./department";
+import { Item } from "./item";
+import { Order } from "./order";
+
 export interface BatchDetail {
-  batch_id: number;
-  order_id: number;
-  item_id: number;
-  dept_id: number;
+  batch: Batch;
+  order: Order;
+  item: Item;
+  department: Department;
 
   quantity: number;
   picked: boolean;

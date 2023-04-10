@@ -1,4 +1,6 @@
+import { Name } from "./name";
+
 export interface Order {
   id: number;
-  name_id: number;
+  name: Name;
 }
