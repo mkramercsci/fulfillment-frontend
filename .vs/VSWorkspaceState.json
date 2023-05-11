@@ -2,11 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app",
-    "\\src\\app\\batch-detail",
-    "\\src\\app\\batches",
-    "\\src\\app\\model"
+    "\\src\\app"
   ],
-  "SelectedNode": "\\src\\app\\batch-detail\\batch-detail.component.html",
+  "SelectedNode": "\\src\\app\\batches",
   "PreviewInSolutionExplorer": false
 }

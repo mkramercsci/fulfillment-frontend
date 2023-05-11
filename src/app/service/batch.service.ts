@@ -21,13 +21,17 @@ export class BatchService {
     return this.http.get<Batch[]>(`${this.batchesUrl}/all`);
   }
 
+  getBatch(id: number): Observable<Batch[]> {
+    return this.http.get<Batch[]>(`${this.batchesUrl}/${id}`);
+  }
+
   getComplete(): Observable<Batch[]> {
     return this.http.get<Batch[]>(`${this.batchesUrl}/complete`);
   }
 
-  setComplete(id: number): any { //Observable<Batch> {
+  setComplete(batch: Batch, id: number): Observable<Batch> { // {
     const url = `${this.batchesUrl}/set_complete/${id}`;
-
+    return this.http.post<Batch>(url, batch);
   }
 
   deleteAll(): Observable<Batch[]> {

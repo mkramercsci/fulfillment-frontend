@@ -1,5 +1,4 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Batch } from '../model/batch';
 import { BatchDetail } from '../model/batch-detail';
@@ -13,7 +12,6 @@ import { BatchService } from '../service/batch.service';
 })
 export class BatchDetailComponent implements OnInit {
 
-  @Input() batch?: Batch;
   batchDetails: BatchDetail[] = [];
   id: number = 0;
 
@@ -24,7 +22,7 @@ export class BatchDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getBatchId();
+    this.getBatch();
     this.getBatchDetail(this.id);
   }
 
@@ -33,11 +31,16 @@ export class BatchDetailComponent implements OnInit {
       .subscribe(batchDetails => this.batchDetails = batchDetails);
   }
 
-  getBatchId(): void {
+  getBatch(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
+  }
+
+  setComplete(): void {
+    this.batchService.setComplete({} as Batch, this.id).subscribe();
   }
 
   exit(): void {
 
   }
+
 }

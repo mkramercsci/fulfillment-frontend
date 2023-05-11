@@ -1,9 +1,12 @@
 <h2>Complete</h2>
 
 <div>
-  <ul class="complete">
+  <ul class="batches">
     <li *ngFor="let batch of complete">
-      {{batch.id}} {{batch.complete}}
+      <a routerLink="/detail/{{batch.id}}">
+        <span class="badge">{{batch.id}}</span>
+        <span class="complete"> {{batch.complete}}</span>
+      </a>
     </li>
   </ul>
 </div>
